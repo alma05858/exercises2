@@ -23,7 +23,7 @@ function klik(evt) {
   console.log("typeOfInput:", typeOfInput);
   if (typeOfInput === "num") {
     // hvis det er et tal, så tjek om det er første eller andet tal der skal gemmes(!) og husk at tallene er strings
-    if (regneArt === "") {
+    if (regneArt) {
       firstNumVal += btnClicked;
       console.log("firstNumVal:", firstNumVal);
     } else {
@@ -54,6 +54,7 @@ function klik(evt) {
       result = num1 / num2;
     }
 
+    console.log(result);
     resetScreen();
     updateScreen(result);
   } else if (typeOfInput === "CLEAR") {
