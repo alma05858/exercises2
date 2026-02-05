@@ -1,3 +1,22 @@
+document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", click);
+});
+
+function click(evt) {
+  evt.target;
+  console.log("jjj", evt.target.dataset.filter);
+  if (evt.target.dataset.filter === "showElectric") {
+    showTheseVehicles(elVehicle);
+  } else if (evt.target.dataset.filter === "showSeats") {
+    showTheseVehicles(vehicleSeats);
+  } else if (evt.target.dataset.filter === "showJonas") {
+    showTheseVehicles(jonasBiler);
+  } else if (evt.target.dataset.filter === "showRye") {
+    showTheseVehicles(ryeBread);
+  } else {
+    showTheseVehicles(vehicles);
+  }
+}
 const vehicles = [
   //OBJEKT MED 4 PROPERTIES
   { type: "Bus", fuel: "Diesel", passengers: 45, stops: ["Nørrebrogade", "Elmegade"] },
@@ -21,6 +40,7 @@ const ryeBread = vehicles.filter((vehicle) => vehicle.fuel === "Rugbrød" && veh
 showTheseVehicles(vehicles);
 
 function showTheseVehicles(arr) {
+  tbodyPointer.innerHTML = "";
   arr.forEach((each) => {
     tbodyPointer.innerHTML += `<tr>
   <td>${each.type}</td>
@@ -33,29 +53,3 @@ function showTheseVehicles(arr) {
 </tr>`;
   });
 }
-
-// Få fat i alle knapperne fra HTML filen, altså det
-document.querySelector("#showAll").addEventListener("click", () => {
-  tbodyPointer.innerHTML = ""; // Ryd tabellen først
-  showTheseVehicles(vehicles);
-});
-
-document.querySelector("#showElectric").addEventListener("click", () => {
-  tbodyPointer.innerHTML = "";
-  showTheseVehicles(elVehicle);
-});
-
-document.querySelector("#showSeats").addEventListener("click", () => {
-  tbodyPointer.innerHTML = "";
-  showTheseVehicles(vehicleSeats);
-});
-
-document.querySelector("#showJonas").addEventListener("click", () => {
-  tbodyPointer.innerHTML = "";
-  showTheseVehicles(jonasBiler);
-});
-
-document.querySelector("#showRye").addEventListener("click", () => {
-  tbodyPointer.innerHTML = "";
-  showTheseVehicles(ryeBread);
-});
