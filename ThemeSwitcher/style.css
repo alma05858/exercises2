@@ -1,0 +1,19 @@
+[data-theme="hawaii"] {
+  --header-bg-col: red;
+  --footer-bg-col: #cafc34;
+}
+[data-theme="dark"] {
+  --header-bg-col: #990f18;
+  --footer-bg-col: #f7cccc;
+}
+[data-theme="light"] {
+  --header-bg-col: #fad6bb;
+  --footer-bg-col: #f35f7a;
+}
+header {
+  background-color: var(--header-bg-col);
+}
+
+footer {
+  background-color: var(--footer-bg-col);
+}
